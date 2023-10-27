@@ -12,6 +12,13 @@ class GetDatesView extends StatefulWidget {
 class _GetDatesViewState extends State<GetDatesView> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    Column viewList = const Column(
+        mainAxisSize: MainAxisSize.min,
+      children: [
+        Placeholder(),
+      ],
+    );
+
+    return viewList;
   }
 }

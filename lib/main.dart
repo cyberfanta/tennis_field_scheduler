@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'presentation/views/screens/GetDatesView.dart';
+import 'presentation/views/screens/get_dates_view.dart';
 
 Future<void> main() async {
   // ignore: unused_local_variable
