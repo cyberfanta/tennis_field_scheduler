@@ -19,6 +19,14 @@ class UiTextEn {
     return "Return";
   }
 
+  String get errorLoading {
+    return "Error loading data";
+  }
+
+  String get getDatesSubTitle {
+    return "Reserved Dates:";
+  }
+
 // String get deleteAppTitle {
 //   return "Alert!!!";
 // }

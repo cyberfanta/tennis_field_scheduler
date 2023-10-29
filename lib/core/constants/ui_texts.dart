@@ -66,4 +66,24 @@ class UiTexts {
       return UiTextEn().leavingAppButton2;
     }
   }
+
+  String get errorLoading {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().errorLoading;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().errorLoading;
+    } else {
+      return UiTextEn().errorLoading;
+    }
+  }
+
+  String get getDatesSubTitle {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getDatesSubTitle;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getDatesSubTitle;
+    } else {
+      return UiTextEn().getDatesSubTitle;
+    }
+  }
 }

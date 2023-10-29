@@ -13,11 +13,13 @@ class BaseTemplate extends StatelessWidget {
     required this.tag,
     required this.content,
     required this.backActionsToDo,
+    this.floatingAction,
   });
 
   final String tag;
   final Widget content;
   final Future<void> Function() backActionsToDo;
+  final VoidCallback? floatingAction;
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +55,13 @@ class BaseTemplate extends StatelessWidget {
             ),
           ],
         ),
+        floatingActionButton: floatingAction != null
+            ? FloatingActionButton(
+                onPressed: floatingAction,
+                backgroundColor: cBlue,
+                child: const Icon(Icons.add),
+              )
+            : null,
       ),
     );
   }

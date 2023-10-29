@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../core/constants/ui_colors.dart';
 import '../../../core/constants/ui_text_styles.dart';
@@ -9,11 +10,9 @@ class CloseAppDialog extends StatelessWidget {
   const CloseAppDialog({
     super.key,
     required this.tag,
-    required this.futureCallback,
   });
 
   final String tag;
-  final Future<void> Function() futureCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +48,7 @@ class CloseAppDialog extends StatelessWidget {
               onPressed: () {
                 stamp(tag, "$pretend \"Application Closed\"",
                     decoratorChar: " * ", extraLine: true);
-                futureCallback();
+                SystemNavigator.pop();
               },
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 1, color: cWhite),

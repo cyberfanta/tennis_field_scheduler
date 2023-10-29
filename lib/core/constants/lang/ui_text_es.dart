@@ -18,4 +18,12 @@ class UiTextEs {
   String get leavingAppButton2 {
     return "Regresar";
   }
+
+  String get errorLoading {
+    return "Error cargando los datos";
+  }
+
+  String get getDatesSubTitle {
+    return "Fechas Reservadas:";
+  }
 }
