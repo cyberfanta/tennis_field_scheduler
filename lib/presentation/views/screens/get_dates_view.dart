@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,14 +28,39 @@ class _GetDatesViewState extends State<GetDatesView> {
     stamp(tag, "height: $height");
     stamp(tag, "width: $width");
 
-    Column viewList = Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        buildAppTitle(context),
-      ],
-    );
+    Widget content = const Text("Prueba");
 
-    return viewList;
+    return WillPopScope(
+      onWillPop: () async {
+        // await backActionsToDo();
+        return true;
+      },
+      child: Scaffold(
+        backgroundColor: cBackground,
+        body: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            buildAppTitle(context),
+            Expanded(
+              child: Stack(
+                alignment: AlignmentDirectional.topCenter,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: SvgPicture.asset(
+                      "assets/images/tennis_ball.svg",
+                      width: min(height - 60, width) - 20,
+                      alignment: Alignment.center,
+                    ),
+                  ),
+                  content,
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Container buildAppTitle(BuildContext context) {

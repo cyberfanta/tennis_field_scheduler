@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const cBackground = cBox3;
+const cBackground = cWhite;
 
 const cCream = Color.fromRGBO(255, 250, 205, 1); // #FFFACD
 
