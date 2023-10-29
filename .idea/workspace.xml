@@ -4,15 +4,44 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (First View): Adding app bar testing.">
-      <change afterPath="$PROJECT_DIR$/lib/core/constants/ui_text_delegate.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/tools/stamp.dart" afterDir="false" />
+    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (App Title): Added support for Multilingual, Font Types and Font Styles.">
+      <change afterPath="$PROJECT_DIR$/assets/images/field.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/field.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/hamburger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/tennis_sun_dawn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/tennis_sun_dawn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension Rules/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension Rules/000003.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension Rules/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension Rules/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension Scripts/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension Scripts/000003.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension Scripts/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension Scripts/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension State/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension State/000003.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension State/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension State/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/GCM Store/Encryption/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/GCM Store/Encryption/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History-journal" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History-journal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network Action Predictor" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network Action Predictor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Network Persistent State" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Network Persistent State" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Reporting and NEL" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Reporting and NEL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/TransportSecurity" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/TransportSecurity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Trust Tokens" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Trust Tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/28dab731-0d56-4284-8160-1b78b863d664/model-info.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/28dab731-0d56-4284-8160-1b78b863d664/model.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/71b6a183-2f15-403e-baa3-98a04f0ea42d/model-info.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/71b6a183-2f15-403e-baa3-98a04f0ea42d/model.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7400f9fc-3630-48a8-8666-86dad5f83a91/model-info.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7400f9fc-3630-48a8-8666-86dad5f83a91/model.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/7400f9fc-3630-48a8-8666-86dad5f83a91/visual_model_desktop.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/9d2fc9ca-3a51-407f-acf2-fbd76c6a1d63/model-info.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/9d2fc9ca-3a51-407f-acf2-fbd76c6a1d63/model.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c5a8fb66-8cfd-4c0e-9e8a-e2d07bdf099b/model-info.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/c5a8fb66-8cfd-4c0e-9e8a-e2d07bdf099b/model.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/optimization_guide_prediction_model_downloads/f328d9e7-fdab-4a42-87c5-266798c8e536/global-entities_metadata" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/constants/ui_text_styles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/ui_text_styles.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -60,13 +89,14 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler/lib/core/tools",
+    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler/assets/images",
     "settings.editor.selected.configurable": "flutter.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\assets\images" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\tools" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\constants" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib" />
@@ -116,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698441751419</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Feat (App Title): Added support for Multilingual, Font Types and Font Styles.">
+      <created>1698544188509</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698544188509</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +174,7 @@
     <MESSAGE value="Feat (Clean Architecture): Creating the initial structure of folder to make the clean architecture happen." />
     <MESSAGE value="Feat (First View): Testing some new ideas for views." />
     <MESSAGE value="Feat (First View): Adding app bar testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (First View): Adding app bar testing." />
+    <MESSAGE value="Feat (App Title): Added support for Multilingual, Font Types and Font Styles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (App Title): Added support for Multilingual, Font Types and Font Styles." />
   </component>
 </project>

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../core/constants/ui_colors.dart';
 import '../../../core/constants/ui_text_styles.dart';
@@ -37,25 +38,46 @@ class _GetDatesViewState extends State<GetDatesView> {
 
   Container buildAppTitle(BuildContext context) {
     return Container(
-        width: double.infinity,
-        alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 20,
+      width: double.infinity,
+      alignment: Alignment.centerLeft,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 15,
+      ),
+      decoration: BoxDecoration(
+        color: cBlue,
+        border: Border.all(
+          color: cBox2,
         ),
-        decoration: BoxDecoration(
-          color: cBlue,
-          border: Border.all(
-            color: cBox2,
+      ),
+      constraints: const BoxConstraints(
+        minHeight: 60,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                UiTexts.of(context)!.title,
+                style: styleMedium(24, cWhite, "Acme"),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              SvgPicture.asset(
+                "assets/images/tennis_ball_with_shadow.svg",
+                height: 40,
+              ),
+            ],
           ),
-        ),
-        constraints: const BoxConstraints(
-          minHeight: 60,
-        ),
-        child: Text(
-          UiTexts.of(context)!.title,
-          style: styleMedium(24, cWhite, "Acme"),
-        ),
-      );
+          SvgPicture.asset(
+            "assets/images/hamburger.svg",
+            height: 40,
+          ),
+        ],
+      ),
+    );
   }
 }
