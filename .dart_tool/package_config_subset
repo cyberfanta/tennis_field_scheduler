@@ -30,6 +30,10 @@ flutter_lints
 3.0
 file:///C:/Users/Cyber/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-3.0.0/
 file:///C:/Users/Cyber/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-3.0.0/lib/
+intl
+2.12
+file:///C:/Users/Cyber/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.1/
+file:///C:/Users/Cyber/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.1/lib/
 lints
 3.0
 file:///C:/Users/Cyber/AppData/Local/Pub/Cache/hosted/pub.dev/lints-3.0.0/
@@ -94,6 +98,10 @@ flutter
 3.0
 file:///C:/tools/flutter/packages/flutter/
 file:///C:/tools/flutter/packages/flutter/lib/
+flutter_localizations
+3.0
+file:///C:/tools/flutter/packages/flutter_localizations/
+file:///C:/tools/flutter/packages/flutter_localizations/lib/
 flutter_test
 3.0
 file:///C:/tools/flutter/packages/flutter_test/

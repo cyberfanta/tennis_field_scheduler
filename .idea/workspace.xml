@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (First View): Testing some new ideas for views.">
-      <change afterPath="$PROJECT_DIR$/lib/core/constants/ui_colors.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/constants/ui_text_styles.dart" afterDir="false" />
+    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (First View): Adding app bar testing.">
+      <change afterPath="$PROJECT_DIR$/lib/core/constants/ui_text_delegate.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/tools/stamp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/ui_text_styles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/ui_text_styles.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +60,14 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler/lib/core/constants",
+    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler/lib/core/tools",
     "settings.editor.selected.configurable": "flutter.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\tools" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\constants" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib" />
     </key>
@@ -101,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698439990662</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Feat (First View): Adding app bar testing.">
+      <created>1698441751419</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698441751419</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +136,7 @@
     <MESSAGE value="Feat (Pubspec): Updating base Project" />
     <MESSAGE value="Feat (Clean Architecture): Creating the initial structure of folder to make the clean architecture happen." />
     <MESSAGE value="Feat (First View): Testing some new ideas for views." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (First View): Testing some new ideas for views." />
+    <MESSAGE value="Feat (First View): Adding app bar testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (First View): Adding app bar testing." />
   </component>
 </project>

@@ -56,10 +56,22 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_localizations",
+      "rootUri": "file:///C:/tools/flutter/packages/flutter_localizations",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///C:/tools/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/Cyber/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "lints",
@@ -152,7 +164,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-27T20:25:29.006575Z",
+  "generated": "2023-10-29T01:36:11.358103Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/ui_colors.dart';
 import '../../../core/constants/ui_text_styles.dart';
+import '../../../core/constants/ui_texts.dart';
+import '../../../core/tools/stamp.dart';
 
 class GetDatesView extends StatefulWidget {
   const GetDatesView({super.key});
@@ -13,39 +15,47 @@ class GetDatesView extends StatefulWidget {
 }
 
 class _GetDatesViewState extends State<GetDatesView> {
+  String tag = GetDatesView.routeName;
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
+    stamp(tag, "height: $height");
+    stamp(tag, "width: $width");
+
     Column viewList = Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-          height: height * .1,
-          width: double.infinity,
-          alignment: Alignment.centerLeft,
-          padding: EdgeInsets.symmetric(
-            horizontal: width * .02,
-            vertical: height * .02,
-          ),
-          decoration: BoxDecoration(
-            color: cBlue,
-            border: Border.all(
-              color: cBox2,
-            ),
-          ),
-          // constraints: BoxConstraints(
-          //   minHeight: height * .1,
-          // ),
-          child: Text(
-            "Tennis Field Scheduler",
-            style: styleMedium(24, cWhite),
-          ),
-        ),
+        buildAppTitle(context),
       ],
     );
 
     return viewList;
+  }
+
+  Container buildAppTitle(BuildContext context) {
+    return Container(
+        width: double.infinity,
+        alignment: Alignment.centerLeft,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 20,
+        ),
+        decoration: BoxDecoration(
+          color: cBlue,
+          border: Border.all(
+            color: cBox2,
+          ),
+        ),
+        constraints: const BoxConstraints(
+          minHeight: 60,
+        ),
+        child: Text(
+          UiTexts.of(context)!.title,
+          style: styleMedium(24, cWhite, "Acme"),
+        ),
+      );
   }
 }

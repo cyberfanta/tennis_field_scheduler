@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'core/constants/ui_text_delegate.dart';
 import 'presentation/views/screens/get_dates_view.dart';
 
 Future<void> main() async {
   // ignore: unused_local_variable
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-
-  // await firebase();
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
@@ -26,9 +26,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: GetDatesView.routeName,
       routes: {
-        // GetDatesView
+        // Views
         GetDatesView.routeName: (context) => const GetDatesView(),
       },
+      localizationsDelegates: const [
+        UxTextDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', 'US'), // English
+        Locale('es', 'ES'), // Spanish
+      ],
     );
   }
 }
