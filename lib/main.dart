@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tennis_field_scheduler/presentation/views/screens/get_dates_view.dart';
 
 import 'core/constants/ui_text_delegate.dart';
-import 'presentation/views/screens/get_dates_view.dart';
 
 Future<void> main() async {
   // ignore: unused_local_variable

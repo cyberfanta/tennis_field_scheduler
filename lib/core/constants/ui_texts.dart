@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
+import 'lang/ui_text_en.dart';
+import 'lang/ui_text_es.dart';
 
 class UiTexts {
   UiTexts(this.locale);
@@ -16,10 +18,52 @@ class UiTexts {
   }
 
   String get title {
-    return Intl.message(
-      "Tennis Field Scheduler",
-      name: "title",
-      locale: locale.toString(),
-    );
+    if (locale.languageCode == 'en') {
+      return UiTextEn().title;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().title;
+    } else {
+      return UiTextEn().title;
+    }
+  }
+
+  String get leavingAppTitle {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().leavingAppTitle;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().leavingAppTitle;
+    } else {
+      return UiTextEn().leavingAppTitle;
+    }
+  }
+
+  String get leavingAppContent {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().leavingAppContent;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().leavingAppContent;
+    } else {
+      return UiTextEn().leavingAppContent;
+    }
+  }
+
+  String get leavingAppButton1 {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().leavingAppButton1;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().leavingAppButton1;
+    } else {
+      return UiTextEn().leavingAppButton1;
+    }
+  }
+
+  String get leavingAppButton2 {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().leavingAppButton2;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().leavingAppButton2;
+    } else {
+      return UiTextEn().leavingAppButton2;
+    }
   }
 }

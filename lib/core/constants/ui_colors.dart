@@ -15,4 +15,3 @@ const cRed = Color.fromRGBO(235, 87, 87, 1); // #EB5757
 const cBlue = Color.fromRGBO(47, 128, 237, 1); // #EB5757
 const cYellow = Color.fromRGBO(255, 255, 125, 1); // #FFFF57
 const cBlack = Color.fromRGBO(0, 0, 0, 1); // #000000
-
