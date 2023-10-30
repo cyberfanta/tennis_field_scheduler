@@ -86,4 +86,44 @@ class UiTexts {
       return UiTextEn().getDatesSubTitle;
     }
   }
+
+  String get deleteReservedTitle {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().deleteReservedTitle;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().deleteReservedTitle;
+    } else {
+      return UiTextEn().deleteReservedTitle;
+    }
+  }
+
+  String get deleteReservedContent {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().deleteReservedContent;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().deleteReservedContent;
+    } else {
+      return UiTextEn().deleteReservedContent;
+    }
+  }
+
+  String get deleteReservedButton1 {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().deleteReservedButton1;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().deleteReservedButton1;
+    } else {
+      return UiTextEn().deleteReservedButton1;
+    }
+  }
+
+  String get deleteReservedButton2 {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().deleteReservedButton2;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().deleteReservedButton2;
+    } else {
+      return UiTextEn().deleteReservedButton2;
+    }
+  }
 }

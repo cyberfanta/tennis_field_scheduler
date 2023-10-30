@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Unstable (Forecast): Adding forecast architecture to obtain the weather prediction in the next commit.">
-      <change afterPath="$PROJECT_DIR$/lib/core/static_data/api_constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Forecast): Forecast now is working properly.">
+      <change afterPath="$PROJECT_DIR$/lib/core/tools/stacks.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/tools/view_manager.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/delete_reserved_date_dialog.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/weather_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/entities/forecast.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/entities/forecast.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/repositories/api/api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repositories/api/api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/repositories/repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repositories/repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/presenters/screens/reserved_date_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/presenters/screens/reserved_date_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/presenters/screens/weather_forecast_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/presenters/screens/weather_forecast_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_date_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/cards/reserved_date_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/add_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/add_dates_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_en.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_es.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,18 +63,18 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler/lib/presentation/common_widgets",
+    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler/lib/core/tools",
     "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\tools" />
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\presentation\common_widgets\dialogs" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\presentation\common_widgets" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\presentation\common_widgets\animations" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\constants\lang" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\assets\images" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\tools" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\presentation\common_widgets\background_templates" />
@@ -163,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698601370754</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Feat (Forecast): Forecast now is working properly.">
+      <created>1698635883072</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698635883072</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +192,7 @@
     <MESSAGE value="Feat (App Title): Added scaffold to use custom styles." />
     <MESSAGE value="Feat (Close App Dialog): Added close app dialog box to prepare some UX improvements." />
     <MESSAGE value="Unstable (Forecast): Adding forecast architecture to obtain the weather prediction in the next commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Unstable (Forecast): Adding forecast architecture to obtain the weather prediction in the next commit." />
+    <MESSAGE value="Feat (Forecast): Forecast now is working properly." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Forecast): Forecast now is working properly." />
   </component>
 </project>

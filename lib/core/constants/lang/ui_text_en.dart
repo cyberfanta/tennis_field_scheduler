@@ -27,6 +27,22 @@ class UiTextEn {
     return "Reserved Dates:";
   }
 
+  String get deleteReservedTitle {
+    return "Warning!!!";
+  }
+
+  String get deleteReservedContent {
+    return "You are about to delete this\nreservation. Are you sure??";
+  }
+
+  String get deleteReservedButton1 {
+    return "Delete";
+  }
+
+  String get deleteReservedButton2 {
+    return "Cancel";
+  }
+
 // String get deleteAppTitle {
 //   return "Alert!!!";
 // }

@@ -14,6 +14,7 @@ import '../../common_widgets/animations/loading_animation.dart';
 import '../../common_widgets/background_templates/base_template.dart';
 import '../../common_widgets/cards/reserved_date_card.dart';
 import '../../common_widgets/dialogs/close_app_dialog.dart';
+import '../../common_widgets/dialogs/delete_reserved_date_dialog.dart';
 
 enum GetDatesViewStatus { loading, success, error }
 
@@ -120,10 +121,15 @@ class _GetDatesViewState extends State<GetDatesView> {
                                     "Forecast: chanceOfRain: ${item.chanceOfRain} - willItRain: ${item.willItRain == 1 ? true : false}");
                               },
                               deleteRequest: () {
-                                context
-                                    .read<ReservedDateCubit>()
-                                    .deleteReservedDate(
-                                        reservedDateList[index].id);
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return DeleteReservedDateDialog(
+                                      tag: tag,
+                                      id: reservedDateList[index].id,
+                                    );
+                                  },
+                                );
                               },
                             );
                           },
