@@ -70,4 +70,12 @@ class UiTextEn {
   String get getWeatherWillItRainNo {
     return "No.";
   }
+
+  String get authorTitle {
+    return "Author!!!";
+  }
+
+  String get authorButton {
+    return "Ok";
+  }
 }

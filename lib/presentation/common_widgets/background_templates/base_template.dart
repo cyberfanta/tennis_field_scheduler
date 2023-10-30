@@ -2,10 +2,12 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tennis_field_scheduler/presentation/common_widgets/ontap_wrapper.dart';
 
 import '../../../core/constants/ui_colors.dart';
 import '../../../core/constants/ui_text_styles.dart';
 import '../../../core/constants/ui_texts.dart';
+import '../dialogs/author_dialog.dart';
 
 class BaseTemplate extends StatelessWidget {
   const BaseTemplate({
@@ -102,9 +104,21 @@ class BaseTemplate extends StatelessWidget {
               ),
             ],
           ),
-          SvgPicture.asset(
-            "assets/images/hamburger.svg",
-            height: 40,
+          OnTapWrapper(
+            widgetToWrap: SvgPicture.asset(
+              "assets/images/hamburger.svg",
+              height: 40,
+            ),
+            actionsToDo: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AuthorDialog(
+                    tag: tag,
+                  );
+                },
+              );
+            },
           ),
         ],
       ),

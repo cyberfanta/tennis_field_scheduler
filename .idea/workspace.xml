@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Delete Reserved Date Dialog): Improving UX for the app.">
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/animations/loading_animation_dialogs.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/author_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_en.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_es.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/repositories/api/api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repositories/api/api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/weather_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/weather_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/background_templates/base_template.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/background_templates/base_template.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,16 +59,16 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler/lib/presentation/common_widgets/animations",
+    "last_opened_file_path": "C:/Users/Cyber/StudioProjects/tennis_field_scheduler/lib/presentation/common_widgets/dialogs",
     "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\presentation\common_widgets\dialogs" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\presentation\common_widgets\animations" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\tools" />
-      <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\presentation\common_widgets\dialogs" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\presentation\common_widgets" />
       <recent name="C:\Users\Cyber\StudioProjects\tennis_field_scheduler\lib\core\constants\lang" />
     </key>

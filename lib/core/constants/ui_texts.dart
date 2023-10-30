@@ -196,4 +196,24 @@ class UiTexts {
       return UiTextEn().getWeatherWillItRainNo;
     }
   }
+
+  String get authorTitle {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().authorTitle;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().authorTitle;
+    } else {
+      return UiTextEn().authorTitle;
+    }
+  }
+
+  String get authorButton {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().authorButton;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().authorButton;
+    } else {
+      return UiTextEn().authorButton;
+    }
+  }
 }
