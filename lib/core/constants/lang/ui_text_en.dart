@@ -43,11 +43,31 @@ class UiTextEn {
     return "Cancel";
   }
 
-// String get deleteAppTitle {
-//   return "Alert!!!";
-// }
-//
-// String get deleteAppContent {
-//   return "Are you sure?? This reserved/ndate will be removed and this/naction can not be undone.";
-// }
+  String get getWeatherTitle {
+    return "Weather Forecast!!!";
+  }
+
+  String get getWeatherContent {
+    return "Wait, updating forecast.";
+  }
+
+  String get getWeatherButton {
+    return "Ok";
+  }
+
+  String get getWeatherChanceOfRain {
+    return "Chance of rain:";
+  }
+
+  String get getWeatherWillItRain {
+    return "Will it rain?:";
+  }
+
+  String get getWeatherWillItRainYes {
+    return "Yes.";
+  }
+
+  String get getWeatherWillItRainNo {
+    return "No.";
+  }
 }

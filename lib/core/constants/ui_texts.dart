@@ -126,4 +126,74 @@ class UiTexts {
       return UiTextEn().deleteReservedButton2;
     }
   }
+
+  String get getWeatherTitle {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getWeatherTitle;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getWeatherTitle;
+    } else {
+      return UiTextEn().getWeatherTitle;
+    }
+  }
+
+  String get getWeatherContent {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getWeatherContent;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getWeatherContent;
+    } else {
+      return UiTextEn().getWeatherContent;
+    }
+  }
+
+  String get getWeatherButton {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getWeatherButton;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getWeatherButton;
+    } else {
+      return UiTextEn().getWeatherButton;
+    }
+  }
+
+  String get getWeatherChanceOfRain {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getWeatherChanceOfRain;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getWeatherChanceOfRain;
+    } else {
+      return UiTextEn().getWeatherChanceOfRain;
+    }
+  }
+
+  String get getWeatherWillItRain {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getWeatherWillItRain;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getWeatherWillItRain;
+    } else {
+      return UiTextEn().getWeatherWillItRain;
+    }
+  }
+
+  String get getWeatherWillItRainYes {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getWeatherWillItRainYes;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getWeatherWillItRainYes;
+    } else {
+      return UiTextEn().getWeatherWillItRainYes;
+    }
+  }
+
+  String get getWeatherWillItRainNo {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getWeatherWillItRainNo;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getWeatherWillItRainNo;
+    } else {
+      return UiTextEn().getWeatherWillItRainNo;
+    }
+  }
 }

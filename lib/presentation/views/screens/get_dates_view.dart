@@ -15,6 +15,7 @@ import '../../common_widgets/background_templates/base_template.dart';
 import '../../common_widgets/cards/reserved_date_card.dart';
 import '../../common_widgets/dialogs/close_app_dialog.dart';
 import '../../common_widgets/dialogs/delete_reserved_date_dialog.dart';
+import '../../common_widgets/dialogs/weather_dialog.dart';
 
 enum GetDatesViewStatus { loading, success, error }
 
@@ -111,14 +112,18 @@ class _GetDatesViewState extends State<GetDatesView> {
                                 final cubit =
                                     BlocProvider.of<WeatherForecastCubit>(
                                         context);
-                                await cubit.getForecast(
-                                    dateTime[2], timeRaw[0]);
-                                final forecast = cubit.state;
-                                final item =
-                                    forecast.forecast!.forecastday![0].hour![0];
 
-                                stamp(tag,
-                                    "Forecast: chanceOfRain: ${item.chanceOfRain} - willItRain: ${item.willItRain == 1 ? true : false}");
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return WeatherDialog(
+                                      tag: tag,
+                                      cubit: cubit,
+                                      date: dateTime[2],
+                                      time: timeRaw[0],
+                                    );
+                                  },
+                                );
                               },
                               deleteRequest: () {
                                 showDialog(

@@ -42,4 +42,32 @@ class UiTextEs {
   String get deleteReservedButton2 {
     return "Cancelar";
   }
+
+  String get getWeatherTitle {
+    return "Predicción del clima!!!";
+  }
+
+  String get getWeatherContent {
+    return "Espere, actualizando predición.";
+  }
+
+  String get getWeatherButton {
+    return "Aceptar";
+  }
+
+  String get getWeatherChanceOfRain {
+    return "Chance de lluvia:";
+  }
+
+  String get getWeatherWillItRain {
+    return "¿Lloverá hoy?:";
+  }
+
+  String get getWeatherWillItRainYes {
+    return "Si.";
+  }
+
+  String get getWeatherWillItRainNo {
+    return "No.";
+  }
 }
