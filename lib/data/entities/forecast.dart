@@ -55,10 +55,19 @@ class BaseForecast {
 
   factory BaseForecast.empty() {
     return BaseForecast(
-      nombre: '',
-      temperatura: 0.0,
-      probabilidadDeLluvia: 0.0,
+      location: Location.empty(),
+      current: Current.empty(),
+      forecast: Forecast.empty(),
     );
+  }
+
+  @override
+  String toString() {
+    return "{"
+        "\"location\":$location,"
+        "\"current\":$current,"
+        "\"forecast\":$forecast"
+        "}";
   }
 }
 
@@ -70,23 +79,23 @@ String forecastToJson(Forecast data) => json.encode(data.toJson());
 
 class Forecast {
   Forecast({
-    List<Forecastday>? forecastday,
+    List<ForecastDay>? forecastDay,
   }) {
-    _forecastday = forecastday;
+    _forecastday = forecastDay;
   }
 
   Forecast.fromJson(dynamic json) {
     if (json['forecastday'] != null) {
       _forecastday = [];
       json['forecastday'].forEach((v) {
-        _forecastday?.add(Forecastday.fromJson(v));
+        _forecastday?.add(ForecastDay.fromJson(v));
       });
     }
   }
 
-  List<Forecastday>? _forecastday;
+  List<ForecastDay>? _forecastday;
 
-  List<Forecastday>? get forecastday => _forecastday;
+  List<ForecastDay>? get forecastday => _forecastday;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -94,6 +103,25 @@ class Forecast {
       map['forecastday'] = _forecastday?.map((v) => v.toJson()).toList();
     }
     return map;
+  }
+
+  factory Forecast.empty() {
+    return Forecast(
+      forecastDay: [],
+    );
+  }
+
+  @override
+  String toString() {
+    String answer = "{\"forecastday\":[";
+    for (ForecastDay forecastDay in _forecastday!) {
+      answer += "$forecastDay,";
+    }
+    if (_forecastday!.isNotEmpty) {
+      answer = answer.substring(0, answer.length - 1);
+    }
+    answer += "]}";
+    return answer;
   }
 }
 
@@ -103,15 +131,15 @@ class Forecast {
 /// astro : {"sunrise":"06:18 AM","sunset":"06:05 PM","moonrise":"06:51 PM","moonset":"06:53 AM","moon_phase":"Waning Gibbous","moon_illumination":100,"is_moon_up":1,"is_sun_up":0}
 /// hour : [{"time_epoch":1698606000,"time":"2023-10-29 15:00","temp_c":23.7,"temp_f":74.7,"is_day":1,"condition":{"text":"Patchy rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"wind_mph":2.5,"wind_kph":4,"wind_degree":13,"wind_dir":"NNE","pressure_mb":1009,"pressure_in":29.8,"precip_mm":0.49,"precip_in":0.02,"humidity":86,"cloud":84,"feelslike_c":25.9,"feelslike_f":78.5,"windchill_c":23.7,"windchill_f":74.7,"heatindex_c":25.9,"heatindex_f":78.5,"dewpoint_c":21.3,"dewpoint_f":70.4,"will_it_rain":1,"chance_of_rain":84,"will_it_snow":0,"chance_of_snow":0,"vis_km":9,"vis_miles":5,"gust_mph":3.3,"gust_kph":5.3,"uv":5}]
 
-Forecastday forecastdayFromJson(String str) =>
-    Forecastday.fromJson(json.decode(str));
+ForecastDay forecastDayFromJson(String str) =>
+    ForecastDay.fromJson(json.decode(str));
 
-String forecastdayToJson(Forecastday data) => json.encode(data.toJson());
+String forecastDayToJson(ForecastDay data) => json.encode(data.toJson());
 
-class Forecastday {
-  Forecastday({
+class ForecastDay {
+  ForecastDay({
     String? date,
-    int? dateEpoch,
+    double? dateEpoch,
     Day? day,
     Astro? astro,
     List<Hour>? hour,
@@ -123,7 +151,7 @@ class Forecastday {
     _hour = hour;
   }
 
-  Forecastday.fromJson(dynamic json) {
+  ForecastDay.fromJson(dynamic json) {
     _date = json['date'];
     _dateEpoch = json['date_epoch'];
     _day = json['day'] != null ? Day.fromJson(json['day']) : null;
@@ -137,14 +165,14 @@ class Forecastday {
   }
 
   String? _date;
-  int? _dateEpoch;
+  double? _dateEpoch;
   Day? _day;
   Astro? _astro;
   List<Hour>? _hour;
 
   String? get date => _date;
 
-  int? get dateEpoch => _dateEpoch;
+  double? get dateEpoch => _dateEpoch;
 
   Day? get day => _day;
 
@@ -166,6 +194,25 @@ class Forecastday {
       map['hour'] = _hour?.map((v) => v.toJson()).toList();
     }
     return map;
+  }
+
+  @override
+  String toString() {
+    String answer = "{"
+        "\"date\":\"$_date\","
+        "\"dateEpoch\":$_dateEpoch,"
+        "\"day\":$_day,"
+        "\"astro\":$_astro,"
+        "\"hour\":"
+        "[";
+    for (Hour hour in _hour!) {
+      answer += "$hour,";
+    }
+    if (_hour!.isNotEmpty) {
+      answer = answer.substring(0, answer.length - 1);
+    }
+    answer += "]}";
+    return answer;
   }
 }
 
@@ -209,22 +256,22 @@ String hourToJson(Hour data) => json.encode(data.toJson());
 
 class Hour {
   Hour({
-    int? timeEpoch,
+    double? timeEpoch,
     String? time,
     double? tempC,
     double? tempF,
-    int? isDay,
+    double? isDay,
     Condition? condition,
     double? windMph,
-    int? windKph,
-    int? windDegree,
+    double? windKph,
+    double? windDegree,
     String? windDir,
-    int? pressureMb,
+    double? pressureMb,
     double? pressureIn,
     double? precipMm,
     double? precipIn,
-    int? humidity,
-    int? cloud,
+    double? humidity,
+    double? cloud,
     double? feelslikeC,
     double? feelslikeF,
     double? windchillC,
@@ -233,15 +280,15 @@ class Hour {
     double? heatindexF,
     double? dewpointC,
     double? dewpointF,
-    int? willItRain,
-    int? chanceOfRain,
-    int? willItSnow,
-    int? chanceOfSnow,
-    int? visKm,
-    int? visMiles,
+    double? willItRain,
+    double? chanceOfRain,
+    double? willItSnow,
+    double? chanceOfSnow,
+    double? visKm,
+    double? visMiles,
     double? gustMph,
     double? gustKph,
-    int? uv,
+    double? uv,
   }) {
     _timeEpoch = timeEpoch;
     _time = time;
@@ -316,22 +363,22 @@ class Hour {
     _uv = json['uv'];
   }
 
-  int? _timeEpoch;
+  double? _timeEpoch;
   String? _time;
   double? _tempC;
   double? _tempF;
-  int? _isDay;
+  double? _isDay;
   Condition? _condition;
   double? _windMph;
-  int? _windKph;
-  int? _windDegree;
+  double? _windKph;
+  double? _windDegree;
   String? _windDir;
-  int? _pressureMb;
+  double? _pressureMb;
   double? _pressureIn;
   double? _precipMm;
   double? _precipIn;
-  int? _humidity;
-  int? _cloud;
+  double? _humidity;
+  double? _cloud;
   double? _feelslikeC;
   double? _feelslikeF;
   double? _windchillC;
@@ -340,17 +387,17 @@ class Hour {
   double? _heatindexF;
   double? _dewpointC;
   double? _dewpointF;
-  int? _willItRain;
-  int? _chanceOfRain;
-  int? _willItSnow;
-  int? _chanceOfSnow;
-  int? _visKm;
-  int? _visMiles;
+  double? _willItRain;
+  double? _chanceOfRain;
+  double? _willItSnow;
+  double? _chanceOfSnow;
+  double? _visKm;
+  double? _visMiles;
   double? _gustMph;
   double? _gustKph;
-  int? _uv;
+  double? _uv;
 
-  int? get timeEpoch => _timeEpoch;
+  double? get timeEpoch => _timeEpoch;
 
   String? get time => _time;
 
@@ -358,19 +405,19 @@ class Hour {
 
   double? get tempF => _tempF;
 
-  int? get isDay => _isDay;
+  double? get isDay => _isDay;
 
   Condition? get condition => _condition;
 
   double? get windMph => _windMph;
 
-  int? get windKph => _windKph;
+  double? get windKph => _windKph;
 
-  int? get windDegree => _windDegree;
+  double? get windDegree => _windDegree;
 
   String? get windDir => _windDir;
 
-  int? get pressureMb => _pressureMb;
+  double? get pressureMb => _pressureMb;
 
   double? get pressureIn => _pressureIn;
 
@@ -378,9 +425,9 @@ class Hour {
 
   double? get precipIn => _precipIn;
 
-  int? get humidity => _humidity;
+  double? get humidity => _humidity;
 
-  int? get cloud => _cloud;
+  double? get cloud => _cloud;
 
   double? get feelslikeC => _feelslikeC;
 
@@ -398,23 +445,23 @@ class Hour {
 
   double? get dewpointF => _dewpointF;
 
-  int? get willItRain => _willItRain;
+  double? get willItRain => _willItRain;
 
-  int? get chanceOfRain => _chanceOfRain;
+  double? get chanceOfRain => _chanceOfRain;
 
-  int? get willItSnow => _willItSnow;
+  double? get willItSnow => _willItSnow;
 
-  int? get chanceOfSnow => _chanceOfSnow;
+  double? get chanceOfSnow => _chanceOfSnow;
 
-  int? get visKm => _visKm;
+  double? get visKm => _visKm;
 
-  int? get visMiles => _visMiles;
+  double? get visMiles => _visMiles;
 
   double? get gustMph => _gustMph;
 
   double? get gustKph => _gustKph;
 
-  int? get uv => _uv;
+  double? get uv => _uv;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -455,6 +502,45 @@ class Hour {
     map['uv'] = _uv;
     return map;
   }
+
+  @override
+  String toString() {
+    return "{"
+        "\"timeEpoch\":$_timeEpoch,"
+        "\"time\":\"$_time\","
+        "\"tempC\":$_tempC,"
+        "\"tempF\":$_tempF,"
+        "\"isDay\":$_isDay,"
+        "\"condition\":$_condition,"
+        "\"windMph\":$_windMph,"
+        "\"windKph\":$_windKph,"
+        "\"windDegree\":$_windDegree,"
+        "\"windDir\":\"$_windDir\","
+        "\"pressureMb\":$_pressureMb,"
+        "\"pressureIn\":$_pressureIn,"
+        "\"precipMm\":$_precipMm,"
+        "\"precipIn\":$_precipIn,"
+        "\"humidity\":$_humidity,"
+        "\"cloud\":$_cloud,"
+        "\"feelslikeC\":$_feelslikeC,"
+        "\"feelslikeF\":$_feelslikeF,"
+        "\"windchillC\":$_windchillC,"
+        "\"windchillF\":$_windchillF,"
+        "\"heatindexC\":$_heatindexC,"
+        "\"heatindexF\":$_heatindexF,"
+        "\"dewpointC\":$_dewpointC,"
+        "\"dewpointF\":$_dewpointF,"
+        "\"willItRain\":$_willItRain,"
+        "\"chanceOfRain\":$_chanceOfRain,"
+        "\"willItSnow\":$_willItSnow,"
+        "\"chanceOfSnow\":$_chanceOfSnow,"
+        "\"visKm\":$_visKm,"
+        "\"visMiles\":$_visMiles,"
+        "\"gustMph\":$_gustMph,"
+        "\"gustKph\":$_gustKph,"
+        "\"uv\":$_uv"
+        "}";
+  }
 }
 
 /// text : "Patchy rain possible"
@@ -469,7 +555,7 @@ class Condition {
   Condition({
     String? text,
     String? icon,
-    int? code,
+    double? code,
   }) {
     _text = text;
     _icon = icon;
@@ -484,13 +570,13 @@ class Condition {
 
   String? _text;
   String? _icon;
-  int? _code;
+  double? _code;
 
   String? get text => _text;
 
   String? get icon => _icon;
 
-  int? get code => _code;
+  double? get code => _code;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -498,6 +584,15 @@ class Condition {
     map['icon'] = _icon;
     map['code'] = _code;
     return map;
+  }
+
+  @override
+  String toString() {
+    return "{"
+        "\"text\":\"$_text\","
+        "\"icon\":\"$_icon\","
+        "\"code\":$_code"
+        "}";
   }
 }
 
@@ -521,9 +616,9 @@ class Astro {
     String? moonrise,
     String? moonset,
     String? moonPhase,
-    int? moonIllumination,
-    int? isMoonUp,
-    int? isSunUp,
+    double? moonIllumination,
+    double? isMoonUp,
+    double? isSunUp,
   }) {
     _sunrise = sunrise;
     _sunset = sunset;
@@ -551,9 +646,9 @@ class Astro {
   String? _moonrise;
   String? _moonset;
   String? _moonPhase;
-  int? _moonIllumination;
-  int? _isMoonUp;
-  int? _isSunUp;
+  double? _moonIllumination;
+  double? _isMoonUp;
+  double? _isSunUp;
 
   String? get sunrise => _sunrise;
 
@@ -565,11 +660,11 @@ class Astro {
 
   String? get moonPhase => _moonPhase;
 
-  int? get moonIllumination => _moonIllumination;
+  double? get moonIllumination => _moonIllumination;
 
-  int? get isMoonUp => _isMoonUp;
+  double? get isMoonUp => _isMoonUp;
 
-  int? get isSunUp => _isSunUp;
+  double? get isSunUp => _isSunUp;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -582,6 +677,20 @@ class Astro {
     map['is_moon_up'] = _isMoonUp;
     map['is_sun_up'] = _isSunUp;
     return map;
+  }
+
+  @override
+  String toString() {
+    return "{"
+        "\"sunrise\":\"$_sunrise\","
+        "\"sunset\":\"$_sunset\","
+        "\"moonrise\":\"$_moonrise\","
+        "\"moonset\":\"$_moonset\","
+        "\"moonPhase\":\"$_moonPhase\","
+        "\"moonIllumination\":$_moonIllumination,"
+        "\"isMoonUp\":$_isMoonUp,"
+        "\"isSunUp\":$_isSunUp"
+        "}";
   }
 }
 
@@ -614,7 +723,7 @@ class Day {
   Day({
     double? maxtempC,
     double? maxtempF,
-    int? mintempC,
+    double? mintempC,
     double? mintempF,
     double? avgtempC,
     double? avgtempF,
@@ -622,16 +731,16 @@ class Day {
     double? maxwindKph,
     double? totalprecipMm,
     double? totalprecipIn,
-    int? totalsnowCm,
+    double? totalsnowCm,
     double? avgvisKm,
-    int? avgvisMiles,
-    int? avghumidity,
-    int? dailyWillItRain,
-    int? dailyChanceOfRain,
-    int? dailyWillItSnow,
-    int? dailyChanceOfSnow,
+    double? avgvisMiles,
+    double? avghumidity,
+    double? dailyWillItRain,
+    double? dailyChanceOfRain,
+    double? dailyWillItSnow,
+    double? dailyChanceOfSnow,
     Condition? condition,
-    int? uv,
+    double? uv,
   }) {
     _maxtempC = maxtempC;
     _maxtempF = maxtempF;
@@ -682,7 +791,7 @@ class Day {
 
   double? _maxtempC;
   double? _maxtempF;
-  int? _mintempC;
+  double? _mintempC;
   double? _mintempF;
   double? _avgtempC;
   double? _avgtempF;
@@ -690,22 +799,22 @@ class Day {
   double? _maxwindKph;
   double? _totalprecipMm;
   double? _totalprecipIn;
-  int? _totalsnowCm;
+  double? _totalsnowCm;
   double? _avgvisKm;
-  int? _avgvisMiles;
-  int? _avghumidity;
-  int? _dailyWillItRain;
-  int? _dailyChanceOfRain;
-  int? _dailyWillItSnow;
-  int? _dailyChanceOfSnow;
+  double? _avgvisMiles;
+  double? _avghumidity;
+  double? _dailyWillItRain;
+  double? _dailyChanceOfRain;
+  double? _dailyWillItSnow;
+  double? _dailyChanceOfSnow;
   Condition? _condition;
-  int? _uv;
+  double? _uv;
 
   double? get maxtempC => _maxtempC;
 
   double? get maxtempF => _maxtempF;
 
-  int? get mintempC => _mintempC;
+  double? get mintempC => _mintempC;
 
   double? get mintempF => _mintempF;
 
@@ -721,25 +830,25 @@ class Day {
 
   double? get totalprecipIn => _totalprecipIn;
 
-  int? get totalsnowCm => _totalsnowCm;
+  double? get totalsnowCm => _totalsnowCm;
 
   double? get avgvisKm => _avgvisKm;
 
-  int? get avgvisMiles => _avgvisMiles;
+  double? get avgvisMiles => _avgvisMiles;
 
-  int? get avghumidity => _avghumidity;
+  double? get avghumidity => _avghumidity;
 
-  int? get dailyWillItRain => _dailyWillItRain;
+  double? get dailyWillItRain => _dailyWillItRain;
 
-  int? get dailyChanceOfRain => _dailyChanceOfRain;
+  double? get dailyChanceOfRain => _dailyChanceOfRain;
 
-  int? get dailyWillItSnow => _dailyWillItSnow;
+  double? get dailyWillItSnow => _dailyWillItSnow;
 
-  int? get dailyChanceOfSnow => _dailyChanceOfSnow;
+  double? get dailyChanceOfSnow => _dailyChanceOfSnow;
 
   Condition? get condition => _condition;
 
-  int? get uv => _uv;
+  double? get uv => _uv;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -766,6 +875,32 @@ class Day {
     }
     map['uv'] = _uv;
     return map;
+  }
+
+  @override
+  String toString() {
+    return "{"
+        "\"maxtempC\":$_maxtempC,"
+        "\"maxtempF\":$_maxtempF,"
+        "\"mintempC\":$_mintempC,"
+        "\"mintempF\":$_mintempF,"
+        "\"avgtempC\":$_avgtempC,"
+        "\"avgtempF\":$_avgtempF,"
+        "\"maxwindMph\":$_maxwindMph,"
+        "\"maxwindKph\":$_maxwindKph,"
+        "\"totalprecipMm\":$_totalprecipMm,"
+        "\"totalprecipIn\":$_totalprecipIn,"
+        "\"totalsnowCm\":$_totalsnowCm,"
+        "\"avgvisKm\":$_avgvisKm,"
+        "\"avgvisMiles\":$_avgvisMiles,"
+        "\"avghumidity\":$_avghumidity,"
+        "\"dailyWillItRain\":$_dailyWillItRain,"
+        "\"dailyChanceOfRain\":$_dailyChanceOfRain,"
+        "\"dailyWillItSnow\":$_dailyWillItSnow,"
+        "\"dailyChanceOfSnow\":$_dailyChanceOfSnow,"
+        "\"condition\":$_condition,"
+        "\"uv\":$_uv"
+        "}";
   }
 }
 
@@ -799,27 +934,27 @@ String currentToJson(Current data) => json.encode(data.toJson());
 
 class Current {
   Current({
-    int? lastUpdatedEpoch,
+    double? lastUpdatedEpoch,
     String? lastUpdated,
-    int? tempC,
+    double? tempC,
     double? tempF,
-    int? isDay,
+    double? isDay,
     Condition? condition,
     double? windMph,
     double? windKph,
-    int? windDegree,
+    double? windDegree,
     String? windDir,
-    int? pressureMb,
+    double? pressureMb,
     double? pressureIn,
-    int? precipMm,
-    int? precipIn,
-    int? humidity,
-    int? cloud,
+    double? precipMm,
+    double? precipIn,
+    double? humidity,
+    double? cloud,
     double? feelslikeC,
     double? feelslikeF,
-    int? visKm,
-    int? visMiles,
-    int? uv,
+    double? visKm,
+    double? visMiles,
+    double? uv,
     double? gustMph,
     double? gustKph,
   }) {
@@ -876,39 +1011,39 @@ class Current {
     _gustKph = json['gust_kph'];
   }
 
-  int? _lastUpdatedEpoch;
+  double? _lastUpdatedEpoch;
   String? _lastUpdated;
-  int? _tempC;
+  double? _tempC;
   double? _tempF;
-  int? _isDay;
+  double? _isDay;
   Condition? _condition;
   double? _windMph;
   double? _windKph;
-  int? _windDegree;
+  double? _windDegree;
   String? _windDir;
-  int? _pressureMb;
+  double? _pressureMb;
   double? _pressureIn;
-  int? _precipMm;
-  int? _precipIn;
-  int? _humidity;
-  int? _cloud;
+  double? _precipMm;
+  double? _precipIn;
+  double? _humidity;
+  double? _cloud;
   double? _feelslikeC;
   double? _feelslikeF;
-  int? _visKm;
-  int? _visMiles;
-  int? _uv;
+  double? _visKm;
+  double? _visMiles;
+  double? _uv;
   double? _gustMph;
   double? _gustKph;
 
-  int? get lastUpdatedEpoch => _lastUpdatedEpoch;
+  double? get lastUpdatedEpoch => _lastUpdatedEpoch;
 
   String? get lastUpdated => _lastUpdated;
 
-  int? get tempC => _tempC;
+  double? get tempC => _tempC;
 
   double? get tempF => _tempF;
 
-  int? get isDay => _isDay;
+  double? get isDay => _isDay;
 
   Condition? get condition => _condition;
 
@@ -916,31 +1051,31 @@ class Current {
 
   double? get windKph => _windKph;
 
-  int? get windDegree => _windDegree;
+  double? get windDegree => _windDegree;
 
   String? get windDir => _windDir;
 
-  int? get pressureMb => _pressureMb;
+  double? get pressureMb => _pressureMb;
 
   double? get pressureIn => _pressureIn;
 
-  int? get precipMm => _precipMm;
+  double? get precipMm => _precipMm;
 
-  int? get precipIn => _precipIn;
+  double? get precipIn => _precipIn;
 
-  int? get humidity => _humidity;
+  double? get humidity => _humidity;
 
-  int? get cloud => _cloud;
+  double? get cloud => _cloud;
 
   double? get feelslikeC => _feelslikeC;
 
   double? get feelslikeF => _feelslikeF;
 
-  int? get visKm => _visKm;
+  double? get visKm => _visKm;
 
-  int? get visMiles => _visMiles;
+  double? get visMiles => _visMiles;
 
-  int? get uv => _uv;
+  double? get uv => _uv;
 
   double? get gustMph => _gustMph;
 
@@ -975,6 +1110,39 @@ class Current {
     map['gust_kph'] = _gustKph;
     return map;
   }
+
+  factory Current.empty() {
+    return Current();
+  }
+
+  @override
+  String toString() {
+    return "{"
+        "\"lastUpdatedEpoch\":$_lastUpdatedEpoch,"
+        "\"lastUpdated\":\"$_lastUpdated\","
+        "\"tempC\":$_tempC,"
+        "\"tempF\":$_tempF,"
+        "\"isDay\":$_isDay,"
+        "\"condition\":$_condition,"
+        "\"windMph\":$_windMph,"
+        "\"windKph\":$_windKph,"
+        "\"windDegree\":$_windDegree,"
+        "\"windDir\":\"$_windDir\","
+        "\"pressureMb\":$_pressureMb,"
+        "\"pressureIn\":$_pressureIn,"
+        "\"precipMm\":$_precipMm,"
+        "\"precipIn\":$_precipIn,"
+        "\"humidity\":$_humidity,"
+        "\"cloud\":$_cloud,"
+        "\"feelslikeC\":$_feelslikeC,"
+        "\"feelslikeF\":$_feelslikeF,"
+        "\"visKm\":$_visKm,"
+        "\"visMiles\":$_visMiles,"
+        "\"uv\":$_uv,"
+        "\"gustMph\":$_gustMph,"
+        "\"gustKph\":$_gustKph"
+        "}";
+  }
 }
 
 /// name : "Caracas"
@@ -998,7 +1166,7 @@ class Location {
     double? lat,
     double? lon,
     String? tzId,
-    int? localtimeEpoch,
+    double? localtimeEpoch,
     String? localtime,
   }) {
     _name = name;
@@ -1028,7 +1196,7 @@ class Location {
   double? _lat;
   double? _lon;
   String? _tzId;
-  int? _localtimeEpoch;
+  double? _localtimeEpoch;
   String? _localtime;
 
   String? get name => _name;
@@ -1043,7 +1211,7 @@ class Location {
 
   String? get tzId => _tzId;
 
-  int? get localtimeEpoch => _localtimeEpoch;
+  double? get localtimeEpoch => _localtimeEpoch;
 
   String? get localtime => _localtime;
 
@@ -1058,5 +1226,23 @@ class Location {
     map['localtime_epoch'] = _localtimeEpoch;
     map['localtime'] = _localtime;
     return map;
+  }
+
+  factory Location.empty() {
+    return Location();
+  }
+
+  @override
+  String toString() {
+    return "{"
+        "\"name\":\"$_name\","
+        "\"region\":\"$_region\","
+        "\"country\":\"$_country\","
+        "\"lat\":$_lat,"
+        "\"lon\":$_lon,"
+        "\"tzId\":\"$_tzId\","
+        "\"localtimeEpoch\":$_localtimeEpoch,"
+        "\"localtime\":\"$_localtime\""
+        "}";
   }
 }

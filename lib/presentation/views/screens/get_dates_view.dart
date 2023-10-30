@@ -9,6 +9,7 @@ import 'package:tennis_field_scheduler/domain/presenters/screens/reserved_date_c
 import '../../../core/constants/ui_text_styles.dart';
 import '../../../core/constants/ui_texts.dart';
 import '../../../core/tools/stamp.dart';
+import '../../../domain/presenters/screens/weather_forecast_cubit.dart';
 import '../../common_widgets/animations/loading_animation.dart';
 import '../../common_widgets/background_templates/base_template.dart';
 import '../../common_widgets/cards/reserved_date_card.dart';
@@ -66,7 +67,9 @@ class _GetDatesViewState extends State<GetDatesView> {
             UiTexts.of(context)!.getDatesSubTitle,
             style: styleRegular(16),
           ),
-          const SizedBox(height: 8,),
+          const SizedBox(
+            height: 8,
+          ),
           Expanded(
             child: ValueListenableBuilder(
               valueListenable: getDatesViewStatusNotifier,
@@ -98,13 +101,29 @@ class _GetDatesViewState extends State<GetDatesView> {
                             return ReservedDateCard(
                               field: reservedDateList[index].field,
                               date: reservedDateList[index].date,
-                              weatherRequest: () {
-                                //TODO: Request weather prediction
+                              weatherRequest: () async {
+                                final List<String> dateTime =
+                                    reservedDateList[index].date.split(" ");
+                                final List<String> timeRaw =
+                                    dateTime[3].split(":");
+
+                                final cubit =
+                                    BlocProvider.of<WeatherForecastCubit>(
+                                        context);
+                                await cubit.getForecast(
+                                    dateTime[2], timeRaw[0]);
+                                final forecast = cubit.state;
+                                final item =
+                                    forecast.forecast!.forecastday![0].hour![0];
+
+                                stamp(tag,
+                                    "Forecast: chanceOfRain: ${item.chanceOfRain} - willItRain: ${item.willItRain == 1 ? true : false}");
                               },
                               deleteRequest: () {
                                 context
                                     .read<ReservedDateCubit>()
-                                    .deleteReservedDate(reservedDateList[index].id);
+                                    .deleteReservedDate(
+                                        reservedDateList[index].id);
                               },
                             );
                           },
@@ -132,7 +151,9 @@ class _GetDatesViewState extends State<GetDatesView> {
 
     if (reservedDateList.length < 5) {
       final reservedDate = ReservedDate(
-          id: "${reservedDateList.length}", field: "Field: A + ${reservedDateList.length}", date: "Date: 2023/10/26 - 11:00am");
+          id: "${reservedDateList.length}",
+          field: "Field: A + ${reservedDateList.length}",
+          date: "Date: 2023/10/30 - 11:00am");
       context.read<ReservedDateCubit>().addReservedDate(reservedDate);
     } else {
       context.read<ReservedDateCubit>().deleteReservedDate("0");

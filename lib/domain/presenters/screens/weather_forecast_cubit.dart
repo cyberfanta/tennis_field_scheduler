@@ -8,8 +8,8 @@ class WeatherForecastCubit extends Cubit<BaseForecast> {
 
   final Repository _repository;
 
-  Future<void> getForecast() async {
-    final forecast = await _repository.getForecast();
+  Future<void> getForecast(String date, String time) async {
+    final BaseForecast forecast = await _repository.getForecast(date, time);
     emit(forecast);
   }
 }

@@ -6,23 +6,25 @@ import '../entities/reserved_date.dart';
 import 'api/api.dart';
 
 class Repository {
-  Repository(this._api);
+  Repository({Api? api}) : _api = api ?? Api();
 
-  late final Api _api;
+  final Api _api;
 
   Future<List<ReservedDate>> loadReservedDates() async {
-    final prefs = await SharedPreferences.getInstance();
-    final data = prefs.getStringList(sharedPreferenceReservations) ?? [];
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final List<String> data =
+        prefs.getStringList(sharedPreferenceReservations) ?? [];
     return data.map((str) => ReservedDate.fromJson(str)).toList();
   }
 
   Future<void> saveReservedDate(List<ReservedDate> reservedDatesList) async {
-    final prefs = await SharedPreferences.getInstance();
-    final data = reservedDatesList.map((reservedDate) => reservedDate.toJson()).toList();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final List<String> data =
+        reservedDatesList.map((reservedDate) => reservedDate.toJson()).toList();
     await prefs.setStringList(sharedPreferenceReservations, data);
   }
 
-  Future<BaseForecast> getForecast() {
-    return _api.getForecast();
+  Future<BaseForecast> getForecast(String date, String time) {
+    return _api.getForecast(date, time);
   }
 }

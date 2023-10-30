@@ -26,7 +26,7 @@ class _AddDatesViewState extends State<AddDatesView> {
   }
 
   Widget buildContent() {
-    return Text("Prueba");
+    return const Text("Prueba");
   }
 
   Future<void> backActions() async {

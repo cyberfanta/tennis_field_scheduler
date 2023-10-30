@@ -27,7 +27,6 @@ class ReservedDateCard extends StatelessWidget {
         border: Border.all(width: .5, color: cBlack),
         borderRadius: BorderRadius.circular(20),
       ),
-      // margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.symmetric(
         vertical: 5,
         horizontal: 10,

@@ -8,6 +8,7 @@ import 'package:tennis_field_scheduler/presentation/views/screens/get_dates_view
 import 'core/constants/ui_text_delegate.dart';
 import 'data/repositories/repository.dart';
 import 'domain/presenters/screens/reserved_date_cubit.dart';
+import 'domain/presenters/screens/weather_forecast_cubit.dart';
 
 Future<void> main() async {
   // ignore: unused_local_variable
@@ -16,7 +17,19 @@ Future<void> main() async {
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
-    runApp(const MyApp());
+    runApp(
+      MultiBlocProvider(
+        providers: [
+          BlocProvider<ReservedDateCubit>(
+            create: (context) => ReservedDateCubit(Repository()),
+          ),
+          BlocProvider<WeatherForecastCubit>(
+            create: (context) => WeatherForecastCubit(Repository()),
+          ),
+        ],
+        child: const MyApp(),
+      ),
+    );
   });
 }
 
@@ -27,25 +40,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // FlutterNativeSplash.remove();
 
-    return BlocProvider(
-      create: (context) => ReservedDateCubit(Repository()),
-      child: MaterialApp(
-        initialRoute: GetDatesView.routeName,
-        routes: {
-          // Views
-          GetDatesView.routeName: (context) => const GetDatesView(),
-          AddDatesView.routeName: (context) => const AddDatesView(),
-        },
-        localizationsDelegates: const [
-          UxTextDelegate(),
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('en', 'US'), // English
-          Locale('es', 'ES'), // Spanish
-        ],
-      ),
+    return MaterialApp(
+      initialRoute: GetDatesView.routeName,
+      routes: {
+        // Views
+        GetDatesView.routeName: (context) => const GetDatesView(),
+        AddDatesView.routeName: (context) => const AddDatesView(),
+      },
+      localizationsDelegates: const [
+        UxTextDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', 'US'), // English
+        Locale('es', 'ES'), // Spanish
+      ],
     );
   }
 }
