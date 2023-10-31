@@ -4,39 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Debugger): Committing debugger files.">
-      <change afterPath="$PROJECT_DIR$/assets/images/back_arrow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core/static_data/static_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/lost_reserved_date_dialog.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/reserved_date_saved_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension State/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension State/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension State/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Extension State/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/GCM Store/Encryption/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/GCM Store/Encryption/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/GCM Store/Encryption/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/GCM Store/Encryption/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History-journal" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History-journal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network Action Predictor" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network Action Predictor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Network Persistent State" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Network Persistent State" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Reporting and NEL" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/Reporting and NEL" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/TransportSecurity" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Network/TransportSecurity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Add Reserved Dates): View is now working.">
+      <change afterPath="$PROJECT_DIR$/lib/core/tools/parse_date_time.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_en.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_es.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/tools/view_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/tools/view_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/background_templates/base_template.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/background_templates/base_template.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/close_app_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/close_app_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/delete_reserved_date_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/delete_reserved_date_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/weather_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/weather_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/add_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/add_dates_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/presenters/screens/reserved_date_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/presenters/screens/reserved_date_cubit.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698680762222</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Feat (Add Reserved Dates): View is now working.">
+      <created>1698721029298</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698721029298</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,6 +218,7 @@
     <MESSAGE value="Feat (Delete Reserved Date Dialog): Improving UX for the app." />
     <MESSAGE value="Feat (Author Dialog): Adding my identification as author if this app." />
     <MESSAGE value="Feat (Debugger): Committing debugger files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Debugger): Committing debugger files." />
+    <MESSAGE value="Feat (Add Reserved Dates): View is now working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Add Reserved Dates): View is now working." />
   </component>
 </project>

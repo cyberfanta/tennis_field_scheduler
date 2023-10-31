@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/tools/parse_date_time.dart';
 import '../../../data/entities/reserved_date.dart';
 import '../../../data/repositories/repository.dart';
 
@@ -11,7 +12,19 @@ class ReservedDateCubit extends Cubit<List<ReservedDate>> {
   final Repository _repository;
 
   Future<void> loadReservedDates() async {
-    final List<ReservedDate> reservedDates = await _repository.loadReservedDates();
+    final List<ReservedDate> reservedDates =
+        await _repository.loadReservedDates();
+
+    reservedDates.sort((a, b) {
+      final aDateTime = parseDateTime(a.date);
+      final bDateTime = parseDateTime(b.date);
+      return aDateTime.compareTo(bDateTime);
+    });
+
+    reservedDates.sort((a, b) {
+      return a.field.compareTo(b.field);
+    });
+
     emit(reservedDates);
   }
 
