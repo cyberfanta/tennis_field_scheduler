@@ -53,6 +53,8 @@ class _WeatherDialogState extends State<WeatherDialog> {
       conditionIcon = "${item.condition!.icon}";
       conditionText = "${item.condition!.text}";
       city = "${forecast.location!.name} - ${forecast.location!.country}";
+      stamp(widget.tag, "Date: ${widget.date}");
+      stamp(widget.tag, "Time: ${widget.time}");
 
       getWeatherDialogStatusNotifier.value = WeatherDialogStatus.success;
     });

@@ -216,4 +216,144 @@ class UiTexts {
       return UiTextEn().authorButton;
     }
   }
+
+  String get lostReservedTitle {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().lostReservedTitle;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().lostReservedTitle;
+    } else {
+      return UiTextEn().lostReservedTitle;
+    }
+  }
+
+  String get lostReservedContent {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().lostReservedContent;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().lostReservedContent;
+    } else {
+      return UiTextEn().lostReservedContent;
+    }
+  }
+
+  String get lostReservedButton1 {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().lostReservedButton1;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().lostReservedButton1;
+    } else {
+      return UiTextEn().lostReservedButton1;
+    }
+  }
+
+  String get lostReservedButton2 {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().lostReservedButton2;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().lostReservedButton2;
+    } else {
+      return UiTextEn().lostReservedButton2;
+    }
+  }
+
+  String get creatingReservedSubTitle {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().creatingReservedSubTitle;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().creatingReservedSubTitle;
+    } else {
+      return UiTextEn().creatingReservedSubTitle;
+    }
+  }
+
+  String get field {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().field;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().field;
+    } else {
+      return UiTextEn().field;
+    }
+  }
+
+  String get date {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().date;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().date;
+    } else {
+      return UiTextEn().date;
+    }
+  }
+
+  String get time {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().time;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().time;
+    } else {
+      return UiTextEn().time;
+    }
+  }
+
+  String get getWeather {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().getWeather;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().getWeather;
+    } else {
+      return UiTextEn().getWeather;
+    }
+  }
+
+  String get reserveDate {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().reserveDate;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().reserveDate;
+    } else {
+      return UiTextEn().reserveDate;
+    }
+  }
+
+  String get reservedDateSavedTitle {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().reservedDateSavedTitle;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().reservedDateSavedTitle;
+    } else {
+      return UiTextEn().reservedDateSavedTitle;
+    }
+  }
+
+  String get reservedDateSavedContent {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().reservedDateSavedContent;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().reservedDateSavedContent;
+    } else {
+      return UiTextEn().reservedDateSavedContent;
+    }
+  }
+
+  String get reservedDateSavedButton1 {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().reservedDateSavedButton1;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().reservedDateSavedButton1;
+    } else {
+      return UiTextEn().reservedDateSavedButton1;
+    }
+  }
+
+  String get reservedDateSavedButton2 {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().reservedDateSavedButton2;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().reservedDateSavedButton2;
+    } else {
+      return UiTextEn().reservedDateSavedButton2;
+    }
+  }
 }

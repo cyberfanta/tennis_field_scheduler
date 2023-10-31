@@ -61,9 +61,7 @@ class CloseAppDialog extends StatelessWidget {
                 style: styleRegular(12, cWhite),
               ),
             ),
-            const SizedBox(
-              width: (20),
-            ),
+            const SizedBox(width: (20)),
             ElevatedButton(
               onPressed: () {
                 stamp(tag, "$pretend \"Closed\"",

@@ -8,7 +8,7 @@ class UiTextEn {
   }
 
   String get leavingAppContent {
-    return "You are about to close the app.\nAre you sure??";
+    return "You are about to close the app.\nAre you sure?";
   }
 
   String get leavingAppButton1 {
@@ -32,7 +32,7 @@ class UiTextEn {
   }
 
   String get deleteReservedContent {
-    return "You are about to delete this\nreservation. Are you sure??";
+    return "You are about to delete this\nreservation. Are you sure?";
   }
 
   String get deleteReservedButton1 {
@@ -77,5 +77,61 @@ class UiTextEn {
 
   String get authorButton {
     return "Ok";
+  }
+
+  String get lostReservedTitle {
+    return "Warning!!!";
+  }
+
+  String get lostReservedContent {
+    return "You are about to lost this\nreservation. Are you sure?";
+  }
+
+  String get lostReservedButton1 {
+    return "Lost";
+  }
+
+  String get lostReservedButton2 {
+    return "Continue";
+  }
+
+  String get creatingReservedSubTitle {
+    return "Create Reserved Date:";
+  }
+
+  String get field {
+    return "Field";
+  }
+
+  String get date {
+    return "Date";
+  }
+
+  String get time {
+    return "Time";
+  }
+
+  String get getWeather {
+    return "Get Weather:";
+  }
+
+  String get reserveDate {
+    return "Reserve";
+  }
+
+  String get reservedDateSavedTitle {
+    return "Success!!!";
+  }
+
+  String get reservedDateSavedContent {
+    return "Your reservation was saved.\nDo you want continue reserving?";
+  }
+
+  String get reservedDateSavedButton1 {
+    return "Finish";
+  }
+
+  String get reservedDateSavedButton2 {
+    return "Continue";
   }
 }

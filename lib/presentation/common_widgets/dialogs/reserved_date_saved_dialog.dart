@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tennis_field_scheduler/core/static_data/static_data.dart';
 
 import '../../../core/constants/ui_colors.dart';
 import '../../../core/constants/ui_text_styles.dart';
 import '../../../core/constants/ui_texts.dart';
 import '../../../core/tools/stamp.dart';
-import '../../../domain/presenters/screens/reserved_date_cubit.dart';
 
-class DeleteReservedDateDialog extends StatelessWidget {
-  const DeleteReservedDateDialog({
+class ReservedDateSavedDialog extends StatelessWidget {
+  const ReservedDateSavedDialog({
     super.key,
     required this.tag,
-    required this.id,
   });
 
   final String tag;
-  final String id;
 
   @override
   Widget build(BuildContext context) {
-    String pretend = "Delete Reserved Date Dialog:";
+    String pretend = "Reserved Date Saved Dialog:";
     stamp(tag, "$pretend \"Opened\"", decoratorChar: " * ");
 
     return AlertDialog(
@@ -33,12 +30,12 @@ class DeleteReservedDateDialog extends StatelessWidget {
       ),
       actionsOverflowAlignment: OverflowBarAlignment.center,
       title: Text(
-        UiTexts.of(context)!.deleteReservedTitle,
+        UiTexts.of(context)!.reservedDateSavedTitle,
         style: styleRegular(24, cWhite),
         textAlign: TextAlign.center,
       ),
       content: Text(
-        UiTexts.of(context)!.deleteReservedContent,
+        UiTexts.of(context)!.reservedDateSavedContent,
         maxLines: 2,
         style: styleRegular(16, cWhite),
         textAlign: TextAlign.center,
@@ -49,10 +46,10 @@ class DeleteReservedDateDialog extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                stamp(tag, "$pretend \"Reserved Date Deleted\"",
+                stamp(tag, "$pretend \"Reserved Date Finish\"",
                     decoratorChar: " * ", extraLine: true);
-                context.read<ReservedDateCubit>().deleteReservedDate(id);
                 Navigator.pop(context);
+                viewManager.pop(context);
               },
               style: ElevatedButton.styleFrom(
                 side: const BorderSide(width: 1, color: cWhite),
@@ -61,14 +58,14 @@ class DeleteReservedDateDialog extends StatelessWidget {
                 fixedSize: const Size(100, 30),
               ),
               child: Text(
-                UiTexts.of(context)!.deleteReservedButton1,
+                UiTexts.of(context)!.reservedDateSavedButton1,
                 style: styleRegular(12, cWhite),
               ),
             ),
-            const SizedBox(width: (20)),
+            const SizedBox(width: 20),
             ElevatedButton(
               onPressed: () {
-                stamp(tag, "$pretend \"Closed\"",
+                stamp(tag, "$pretend \"Reserved Date Kept\"",
                     decoratorChar: " * ", extraLine: true);
                 Navigator.pop(context);
               },
@@ -79,7 +76,7 @@ class DeleteReservedDateDialog extends StatelessWidget {
                 fixedSize: const Size(100, 30),
               ),
               child: Text(
-                UiTexts.of(context)!.deleteReservedButton2,
+                UiTexts.of(context)!.reservedDateSavedButton2,
                 style: styleBold(13, cBlue),
               ),
             ),

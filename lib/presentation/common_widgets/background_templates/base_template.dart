@@ -95,9 +95,7 @@ class BaseTemplate extends StatelessWidget {
                 UiTexts.of(context)!.title,
                 style: styleMedium(24, cWhite, "Acme"),
               ),
-              const SizedBox(
-                width: 10,
-              ),
+              const SizedBox(width: 10),
               SvgPicture.asset(
                 "assets/images/tennis_ball_with_shadow.svg",
                 height: 40,

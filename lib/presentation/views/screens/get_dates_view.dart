@@ -2,12 +2,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 import 'package:tennis_field_scheduler/data/entities/reserved_date.dart';
 import 'package:tennis_field_scheduler/domain/presenters/screens/reserved_date_cubit.dart';
+import 'package:tennis_field_scheduler/presentation/views/screens/add_dates_view.dart';
 
 import '../../../core/constants/ui_text_styles.dart';
 import '../../../core/constants/ui_texts.dart';
+import '../../../core/static_data/static_data.dart';
 import '../../../core/tools/stamp.dart';
 import '../../../domain/presenters/screens/weather_forecast_cubit.dart';
 import '../../common_widgets/animations/loading_animation.dart';
@@ -69,9 +70,7 @@ class _GetDatesViewState extends State<GetDatesView> {
             UiTexts.of(context)!.getDatesSubTitle,
             style: styleRegular(16),
           ),
-          const SizedBox(
-            height: 8,
-          ),
+          const SizedBox(height: 8),
           Expanded(
             child: ValueListenableBuilder(
               valueListenable: getDatesViewStatusNotifier,
@@ -156,23 +155,14 @@ class _GetDatesViewState extends State<GetDatesView> {
   void floatingAction() {
     stamp(tag, "Action: \"Add\"", decoratorChar: " * ", extraLine: true);
 
-    ReservedDateCubit cubit =
-        Provider.of<ReservedDateCubit>(context, listen: false);
-    List<ReservedDate> reservedDateList = cubit.state;
+    dropdownValue = "${UiTexts.of(context)!.field} A";
+    items = [
+      "${UiTexts.of(context)!.field} A",
+      "${UiTexts.of(context)!.field} B",
+      "${UiTexts.of(context)!.field} C"
+    ];
 
-    if (reservedDateList.length < 5) {
-      final reservedDate = ReservedDate(
-          id: "${reservedDateList.length}",
-          field: "Field: A + ${reservedDateList.length}",
-          date: "Date: 2023/10/30 - 11:00am");
-      context.read<ReservedDateCubit>().addReservedDate(reservedDate);
-    } else {
-      context.read<ReservedDateCubit>().deleteReservedDate("0");
-      context.read<ReservedDateCubit>().deleteReservedDate("1");
-      context.read<ReservedDateCubit>().deleteReservedDate("2");
-      context.read<ReservedDateCubit>().deleteReservedDate("3");
-      context.read<ReservedDateCubit>().deleteReservedDate("4");
-    }
+    viewManager.push(context, AddDatesView.routeName);
   }
 
   Future<void> backActions() async {
