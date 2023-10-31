@@ -44,7 +44,8 @@ class _AddDatesViewState extends State<AddDatesView> {
   Widget buildContent() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-      child: ListView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             children: [
@@ -71,201 +72,209 @@ class _AddDatesViewState extends State<AddDatesView> {
             ],
           ),
           const SizedBox(height: 16),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(
-              "${UiTexts.of(context)!.field}:",
-              style: styleRegular(14),
-            ),
-          ),
-          const SizedBox(height: 4),
-          Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: cYellow,
-              borderRadius: BorderRadius.circular(15),
-              border: Border.all(
-                color: cBlack,
-                width: .5,
-              ),
-            ),
-            child: DropdownButton<String>(
-              value: dropdownValue,
-              icon: const Icon(Icons.arrow_drop_down),
-              iconSize: 24,
-              elevation: 16,
-              style: styleRegular(14),
-              underline: Container(height: 0),
-              borderRadius: BorderRadius.circular(15),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 2,
-              ),
-              // isExpanded: true,
-              dropdownColor: cYellow,
-              iconEnabledColor: cBlack,
-              onChanged: (String? newValue) {
-                setState(() {
-                  dropdownValue = newValue!;
-                });
-              },
-              items: items.map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
+          Expanded(
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
                   child: Text(
-                    value,
+                    "${UiTexts.of(context)!.field}:",
                     style: styleRegular(14),
                   ),
-                );
-              }).toList(),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(
-              "${UiTexts.of(context)!.date}:",
-              style: styleRegular(14),
-            ),
-          ),
-          const SizedBox(height: 4),
-          OnTapWrapper(
-            widgetToWrap: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: cYellow,
-                border: Border.all(color: cBlack, width: .5),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 10,
-              ),
-              child: Text(
-                "${selectedDate.year}-"
-                "${selectedDate.month < 10 ? "0${selectedDate.month}" : selectedDate.month}-"
-                "${selectedDate.day < 10 ? "0${selectedDate.day}" : selectedDate.day}",
-                style: styleRegular(16),
-              ),
-            ),
-            actionsToDo: () {
-              _selectDate(context);
-            },
-          ),
-          const SizedBox(height: 8),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(
-              "${UiTexts.of(context)!.time}:",
-              style: styleRegular(14),
-            ),
-          ),
-          const SizedBox(height: 4),
-          OnTapWrapper(
-            widgetToWrap: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: cYellow,
-                border: Border.all(color: cBlack, width: .5),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 10,
-              ),
-              child: Text(
-                selectedTime.hour < 13
-                    ? "${selectedTime.hour - 12} AM"
-                    : "${selectedTime.hour - 12} PM",
-                style: styleRegular(16),
-              ),
-            ),
-            actionsToDo: () {
-              _selectTime(context);
-            },
-          ),
-          const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              OnTapWrapper(
-                widgetToWrap: Column(
-                  children: [
-                    Text(
-                      UiTexts.of(context)!.getWeather,
-                      style: styleRegular(14),
+                ),
+                const SizedBox(height: 4),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: cYellow,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                      color: cBlack,
+                      width: .5,
                     ),
-                    const SizedBox(height: 2),
-                    SvgPicture.asset(
-                      "assets/images/weather.svg",
+                  ),
+                  child: DropdownButton<String>(
+                    value: dropdownValue,
+                    icon: const Icon(Icons.arrow_drop_down),
+                    iconSize: 24,
+                    elevation: 16,
+                    style: styleRegular(14),
+                    underline: Container(height: 0),
+                    borderRadius: BorderRadius.circular(15),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 2,
+                    ),
+                    // isExpanded: true,
+                    dropdownColor: cYellow,
+                    iconEnabledColor: cBlack,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownValue = newValue!;
+                      });
+                    },
+                    items: items.map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: styleRegular(14),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    "${UiTexts.of(context)!.date}:",
+                    style: styleRegular(14),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                OnTapWrapper(
+                  widgetToWrap: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: cYellow,
+                      border: Border.all(color: cBlack, width: .5),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 10,
+                    ),
+                    child: Text(
+                      "${selectedDate.year}-"
+                      "${selectedDate.month < 10 ? "0${selectedDate.month}" : selectedDate.month}-"
+                      "${selectedDate.day < 10 ? "0${selectedDate.day}" : selectedDate.day}",
+                      style: styleRegular(16),
+                    ),
+                  ),
+                  actionsToDo: () {
+                    _selectDate(context);
+                  },
+                ),
+                const SizedBox(height: 8),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    "${UiTexts.of(context)!.time}:",
+                    style: styleRegular(14),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                OnTapWrapper(
+                  widgetToWrap: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: cYellow,
+                      border: Border.all(color: cBlack, width: .5),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 10,
+                    ),
+                    child: Text(
+                      selectedTime.hour < 13
+                          ? "${selectedTime.hour - 12} AM"
+                          : "${selectedTime.hour - 12} PM",
+                      style: styleRegular(16),
+                    ),
+                  ),
+                  actionsToDo: () {
+                    _selectTime(context);
+                  },
+                ),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    OnTapWrapper(
+                      widgetToWrap: Column(
+                        children: [
+                          Text(
+                            UiTexts.of(context)!.getWeather,
+                            style: styleRegular(14),
+                          ),
+                          const SizedBox(height: 2),
+                          SvgPicture.asset(
+                            "assets/images/weather.svg",
+                          ),
+                        ],
+                      ),
+                      actionsToDo: () {
+                        final cubit =
+                            BlocProvider.of<WeatherForecastCubit>(context);
+
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return WeatherDialog(
+                              tag: tag,
+                              cubit: cubit,
+                              date: "${selectedDate.year}-"
+                                  "${selectedDate.month < 10 ? "0${selectedDate.month}" : selectedDate.month}-"
+                                  "${selectedDate.day < 10 ? "0${selectedDate.day}" : selectedDate.day}",
+                              time: "${selectedTime.hour}",
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    OnTapWrapper(
+                      widgetToWrap: Container(
+                        decoration: BoxDecoration(
+                          color: cBlue,
+                          border: Border.all(color: cBlack, width: .5),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 10,
+                        ),
+                        child: Text(
+                          UiTexts.of(context)!.reserveDate,
+                          style: styleBold(
+                            16,
+                            cWhite,
+                          ),
+                        ),
+                      ),
+                      actionsToDo: () {
+                        ReservedDateCubit cubit =
+                            Provider.of<ReservedDateCubit>(context,
+                                listen: false);
+                        List<ReservedDate> reservedDateList = cubit.state;
+
+                        final reservedDate = ReservedDate(
+                            id: "${reservedDateList.length}",
+                            field: dropdownValue,
+                            date:
+                                "${UiTexts.of(context)!.date}: ${"${selectedDate.year}-"
+                                    "${selectedDate.month < 10 ? "0${selectedDate.month}" : selectedDate.month}-"
+                                    "${selectedDate.day < 10 ? "0${selectedDate.day}" : selectedDate.day}"} - "
+                                "${UiTexts.of(context)!.time}: ${selectedTime.hour < 13 ? "${selectedTime.hour - 12} AM" : "${selectedTime.hour - 12} PM"}");
+                        context
+                            .read<ReservedDateCubit>()
+                            .addReservedDate(reservedDate);
+
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return ReservedDateSavedDialog(
+                              tag: tag,
+                            );
+                          },
+                        );
+                      },
                     ),
                   ],
                 ),
-                actionsToDo: () {
-                  final cubit = BlocProvider.of<WeatherForecastCubit>(context);
-
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return WeatherDialog(
-                        tag: tag,
-                        cubit: cubit,
-                        date: "${selectedDate.year}-"
-                            "${selectedDate.month < 10 ? "0${selectedDate.month}" : selectedDate.month}-"
-                            "${selectedDate.day < 10 ? "0${selectedDate.day}" : selectedDate.day}",
-                        time: "${selectedTime.hour}",
-                      );
-                    },
-                  );
-                },
-              ),
-              OnTapWrapper(
-                widgetToWrap: Container(
-                  decoration: BoxDecoration(
-                    color: cBlue,
-                    border: Border.all(color: cBlack, width: .5),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 10,
-                  ),
-                  child: Text(
-                    UiTexts.of(context)!.reserveDate,
-                    style: styleBold(
-                      16,
-                      cWhite,
-                    ),
-                  ),
-                ),
-                actionsToDo: () {
-                  ReservedDateCubit cubit =
-                      Provider.of<ReservedDateCubit>(context, listen: false);
-                  List<ReservedDate> reservedDateList = cubit.state;
-
-                  final reservedDate = ReservedDate(
-                      id: "${reservedDateList.length}",
-                      field: dropdownValue,
-                      date:
-                          "${UiTexts.of(context)!.date}: ${"${selectedDate.year}-"
-                              "${selectedDate.month < 10 ? "0${selectedDate.month}" : selectedDate.month}-"
-                              "${selectedDate.day < 10 ? "0${selectedDate.day}" : selectedDate.day}"} - "
-                          "${UiTexts.of(context)!.time}: ${selectedTime.hour < 13 ? "${selectedTime.hour - 12} AM" : "${selectedTime.hour - 12} PM"}");
-                  context
-                      .read<ReservedDateCubit>()
-                      .addReservedDate(reservedDate);
-
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return ReservedDateSavedDialog(
-                        tag: tag,
-                      );
-                    },
-                  );
-                },
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

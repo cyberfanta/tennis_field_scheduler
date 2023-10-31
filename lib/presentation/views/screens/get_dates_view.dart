@@ -105,8 +105,8 @@ class _GetDatesViewState extends State<GetDatesView> {
                               weatherRequest: () async {
                                 final List<String> dateTime =
                                     reservedDateList[index].date.split(" ");
-                                final List<String> timeRaw =
-                                    dateTime[3].split(":");
+                                final int timeRaw = int.parse(dateTime[4]) +
+                                    (dateTime[5] == "PM" ? 12 : 0);
 
                                 final cubit =
                                     BlocProvider.of<WeatherForecastCubit>(
@@ -118,8 +118,8 @@ class _GetDatesViewState extends State<GetDatesView> {
                                     return WeatherDialog(
                                       tag: tag,
                                       cubit: cubit,
-                                      date: dateTime[2],
-                                      time: timeRaw[0],
+                                      date: dateTime[1],
+                                      time: "$timeRaw",
                                     );
                                   },
                                 );
