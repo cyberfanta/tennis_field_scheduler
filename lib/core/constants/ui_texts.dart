@@ -267,6 +267,26 @@ class UiTexts {
     }
   }
 
+  String get name {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().name;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().name;
+    } else {
+      return UiTextEn().name;
+    }
+  }
+
+  String get hintName {
+    if (locale.languageCode == 'en') {
+      return UiTextEn().hintName;
+    } else if (locale.languageCode == 'es') {
+      return UiTextEs().hintName;
+    } else {
+      return UiTextEn().hintName;
+    }
+  }
+
   String get field {
     if (locale.languageCode == 'en') {
       return UiTextEn().field;

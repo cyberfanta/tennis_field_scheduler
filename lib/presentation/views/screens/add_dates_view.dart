@@ -31,6 +31,7 @@ class _AddDatesViewState extends State<AddDatesView> {
       AddDatesView.routeName.substring(1, AddDatesView.routeName.length);
   DateTime selectedDate = DateTime.now();
   TimeOfDay selectedTime = TimeOfDay.now();
+  final nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +76,41 @@ class _AddDatesViewState extends State<AddDatesView> {
           Expanded(
             child: ListView(
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    "${UiTexts.of(context)!.name}:",
+                    style: styleRegular(14),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: cYellow,
+                    border: Border.all(color: cBlack, width: .5),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 10,
+                  ),
+                  constraints: const BoxConstraints(minHeight: 50),
+                  alignment: Alignment.center,
+                  child: TextField(
+                    controller: nameController,
+                    keyboardType: TextInputType.name,
+                    style: styleRegular(14),
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.zero,
+                      isCollapsed: true,
+                      border: InputBorder.none,
+                      hintText: UiTexts.of(context)!.hintName,
+                      hintStyle: styleRegular(14, cGrayDark),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Text(
@@ -254,13 +290,16 @@ class _AddDatesViewState extends State<AddDatesView> {
                         List<ReservedDate> reservedDateList = cubit.state;
 
                         final reservedDate = ReservedDate(
-                            id: "${reservedDateList.length}",
-                            field: dropdownValue,
-                            date:
-                                "${UiTexts.of(context)!.date}: ${"${selectedDate.year}-"
-                                    "${selectedDate.month < 10 ? "0${selectedDate.month}" : selectedDate.month}-"
-                                    "${selectedDate.day < 10 ? "0${selectedDate.day}" : selectedDate.day}"} - "
-                                "${UiTexts.of(context)!.time}: ${selectedTime.hour < 13 ? "${selectedTime.hour - 12} AM" : "${selectedTime.hour - 12} PM"}");
+                          id: "${reservedDateList.length}",
+                          field: dropdownValue,
+                          date:
+                              "${UiTexts.of(context)!.date}: ${"${selectedDate.year}-"
+                                  "${selectedDate.month < 10 ? "0${selectedDate.month}" : selectedDate.month}-"
+                                  "${selectedDate.day < 10 ? "0${selectedDate.day}" : selectedDate.day}"} - "
+                              "${UiTexts.of(context)!.time}: "
+                              "${selectedTime.hour == 0 ? "12 AM" : selectedTime.hour < 12 ? "${selectedTime.hour} AM" : selectedTime.hour == 12 ? "12 PM" : "${selectedTime.hour - 12} PM"}",
+                          owner: nameController.text,
+                        );
                         context
                             .read<ReservedDateCubit>()
                             .addReservedDate(reservedDate);

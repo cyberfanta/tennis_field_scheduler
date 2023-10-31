@@ -102,6 +102,7 @@ class _GetDatesViewState extends State<GetDatesView> {
                             return ReservedDateCard(
                               field: reservedDateList[index].field,
                               date: reservedDateList[index].date,
+                              name: reservedDateList[index].owner,
                               weatherRequest: () async {
                                 final List<String> dateTime =
                                     reservedDateList[index].date.split(" ");

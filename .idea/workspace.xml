@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Various): Some minor adjustments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_en.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_es.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/lang/ui_text_es.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/ui_texts.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/entities/reserved_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/entities/reserved_date.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/add_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/add_dates_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698724042080</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Feat (Various): Some minor adjustments.">
+      <created>1698725541487</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1698725541487</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

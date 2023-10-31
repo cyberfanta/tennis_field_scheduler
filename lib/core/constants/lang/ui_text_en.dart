@@ -99,6 +99,14 @@ class UiTextEn {
     return "Create Reserved Date:";
   }
 
+  String get name {
+    return "Name";
+  }
+
+  String get hintName {
+    return "Write your name here";
+  }
+
   String get field {
     return "Field";
   }

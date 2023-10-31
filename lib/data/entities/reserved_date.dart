@@ -4,17 +4,20 @@ class ReservedDate {
   final String id;
   final String field;
   final String date;
+  final String owner;
 
   ReservedDate({
     required this.id,
     required this.field,
     required this.date,
+    required this.owner,
   });
 
   String toJson() => json.encode({
         'id': id,
         'field': field,
         'date': date,
+        'owner': owner,
       });
 
   static ReservedDate fromJson(String str) {
@@ -23,6 +26,7 @@ class ReservedDate {
       id: data['id'],
       field: data['field'],
       date: data['date'],
+      owner: data['owner'],
     );
   }
 }

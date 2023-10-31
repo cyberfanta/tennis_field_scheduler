@@ -99,6 +99,14 @@ class UiTextEs {
     return "Crear Fechas Reservadas:";
   }
 
+  String get name {
+    return "Nombre";
+  }
+
+  String get hintName {
+    return "Escribe tu nombre aquí";
+  }
+
   String get field {
     return "Cancha";
   }

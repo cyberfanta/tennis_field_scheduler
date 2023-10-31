@@ -10,12 +10,14 @@ class ReservedDateCard extends StatelessWidget {
     super.key,
     required this.field,
     required this.date,
+    required this.name,
     required this.weatherRequest,
     required this.deleteRequest,
   });
 
   final String field;
   final String date;
+  final String name;
   final VoidCallback weatherRequest;
   final VoidCallback deleteRequest;
 
@@ -39,7 +41,7 @@ class ReservedDateCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                field,
+                "$field - $name",
                 style: styleRegular(16),
               ),
               Text(
