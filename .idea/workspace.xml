@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Get Reserved Dates): Reserved dates are now ordered by date.">
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" afterDir="false" />
+    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Various): Some minor adjustments.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/add_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/add_dates_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698723358499</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Feat (Various): Some minor adjustments.">
+      <created>1698724042080</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1698724042080</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,6 +233,7 @@
     <MESSAGE value="Feat (Debugger): Committing debugger files." />
     <MESSAGE value="Feat (Add Reserved Dates): View is now working." />
     <MESSAGE value="Feat (Get Reserved Dates): Reserved dates are now ordered by date." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Get Reserved Dates): Reserved dates are now ordered by date." />
+    <MESSAGE value="Feat (Various): Some minor adjustments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Various): Some minor adjustments." />
   </component>
 </project>

@@ -178,9 +178,13 @@ class _AddDatesViewState extends State<AddDatesView> {
                       vertical: 10,
                     ),
                     child: Text(
-                      selectedTime.hour < 13
-                          ? "${selectedTime.hour - 12} AM"
-                          : "${selectedTime.hour - 12} PM",
+                      selectedTime.hour == 0
+                          ? "12 AM"
+                          : selectedTime.hour < 12
+                              ? "${selectedTime.hour} AM"
+                              : selectedTime.hour == 12
+                                  ? "12 PM"
+                                  : "${selectedTime.hour - 12} PM",
                       style: styleRegular(16),
                     ),
                   ),
