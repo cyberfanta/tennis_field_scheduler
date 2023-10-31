@@ -163,6 +163,11 @@ class _GetDatesViewState extends State<GetDatesView> {
       "${UiTexts.of(context)!.field} C"
     ];
 
+      selectedDate = DateTime.now();
+      while (countReservations(selectedDate) >= 3) {
+        selectedDate = selectedDate.add(const Duration(days: 1));
+      }
+
     viewManager.push(context, AddDatesView.routeName);
   }
 

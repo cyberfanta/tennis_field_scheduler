@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/static_data/static_data.dart';
 import '../../../core/tools/parse_date_time.dart';
 import '../../../data/entities/reserved_date.dart';
 import '../../../data/repositories/repository.dart';
@@ -24,6 +25,8 @@ class ReservedDateCubit extends Cubit<List<ReservedDate>> {
     reservedDates.sort((a, b) {
       return a.field.compareTo(b.field);
     });
+
+    dateList = reservedDates.map((r) => r.date).toList();
 
     emit(reservedDates);
   }

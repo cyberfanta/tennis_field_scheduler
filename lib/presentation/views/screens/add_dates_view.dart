@@ -29,7 +29,7 @@ class AddDatesView extends StatefulWidget {
 class _AddDatesViewState extends State<AddDatesView> {
   String tag =
       AddDatesView.routeName.substring(1, AddDatesView.routeName.length);
-  DateTime selectedDate = DateTime.now();
+
   TimeOfDay selectedTime = TimeOfDay.now();
   final nameController = TextEditingController();
 
@@ -336,6 +336,9 @@ class _AddDatesViewState extends State<AddDatesView> {
       initialDate: selectedDate,
       firstDate: DateTime(2015, 8),
       lastDate: DateTime(2101),
+      selectableDayPredicate: (date) {
+        return countReservations(date) < 3;
+      },
     );
     if (picked != null && picked != selectedDate) {
       setState(() {
