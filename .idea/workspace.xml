@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Reserved Day): Added support to write reservation owner." />
+    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Reserved Day): Added support to write reservation owner.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +100,7 @@
         <item itemvalue="Flutter Test.tests in view_test.dart" />
         <item itemvalue="Flutter Test.tests in reserved_date_cubit_test.dart" />
         <item itemvalue="Flutter Test.tests in model_test.dart" />
-        <item itemvalue="Flutter Test.tests in model_test.dart" />
+        <item itemvalue="Flutter Test.tests in weather_forecast_cubit_test.dart" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698802616951</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Feat (Readme.MD): Some fixes.">
+      <created>1698805427369</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1698805427369</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,6 +319,7 @@
     <MESSAGE value="Feat (Shared Preferences): Disabling the backup in ios." />
     <MESSAGE value="Feat (Unit Test): Added the unit tests to validate the different components of this app" />
     <MESSAGE value="Feat (Linkedin): Adding linkedin access to author dialog." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Linkedin): Adding linkedin access to author dialog." />
+    <MESSAGE value="Feat (Readme.MD): Some fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Readme.MD): Some fixes." />
   </component>
 </project>

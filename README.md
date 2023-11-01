@@ -44,9 +44,19 @@ With clean architecture and MVP (Model View Presenter).
 The planning for the UI was made using [Figma](https://www.figma.com/downloads/)
 
 ## Screenshots 🖼
-<img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_0.png" alt="Design Proposed" height="300"/>
-<img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_1.png" alt="Screenshot 1" height="300"/> <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_2.png" alt="Screenshot 2" height="300"/> <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_3.png" alt="Screenshot 3" height="300"/>
-<img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_4.png" alt="Screenshot 4" height="300"/> <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_5.png" alt="Screenshot 5" height="300"/> <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_6.png" alt="Screenshot 6" height="300"/>
+<div style="display: flex; justify-content: center;">
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_0.png" alt="Design Proposed" height="300"/>
+</div>
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_1.png" alt="Design Proposed" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_2.png" alt="Design Proposed" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_3.png" alt="Design Proposed" height="300"/>
+</div>
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_4.png" alt="Design Proposed" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_5.png" alt="Design Proposed" height="300"/>
+    <img src="https://github.com/cyberfanta/tennis_field_scheduler/blob/master/assets/extras/tennis_calculator_6.png" alt="Design Proposed" height="300"/>
+</div>
 
 ## Try this project ⚔
 **Use this project on your phone** with this [Debug APK](https://github.com/cyberfanta/tennis_field_scheduler/blob/master/apk/app-debug.apk)
