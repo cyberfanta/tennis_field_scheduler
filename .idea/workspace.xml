@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Shared Preferences): Disabling the backup in ios.">
-      <change afterPath="$PROJECT_DIR$/test/model_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/reserved_date_cubit_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/view_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/weather_forecast_cubit_test.dart" afterDir="false" />
+    <list default="true" id="801ebdf9-48fa-4226-8687-2e4daf57b1fe" name="Changes" comment="Feat (Unit Test): Added the unit tests to validate the different components of this app">
+      <change afterPath="$PROJECT_DIR$/assets/images/linkedin.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/constants/ui_text_delegate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constants/ui_text_delegate.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/entities/reserved_date.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/entities/reserved_date.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/repositories/repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repositories/repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/views/screens/get_dates_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/static_data/static_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/static_data/static_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/author_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/common_widgets/dialogs/author_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -272,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698732374536</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Feat (Unit Test): Added the unit tests to validate the different components of this app">
+      <created>1698801331202</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1698801331202</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,6 +311,7 @@
     <MESSAGE value="Feat (Reserved Day): Added support to write reservation owner." />
     <MESSAGE value="Feat (Shared Preferences): Disabling the backup in android." />
     <MESSAGE value="Feat (Shared Preferences): Disabling the backup in ios." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat (Shared Preferences): Disabling the backup in ios." />
+    <MESSAGE value="Feat (Unit Test): Added the unit tests to validate the different components of this app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat (Unit Test): Added the unit tests to validate the different components of this app" />
   </component>
 </project>

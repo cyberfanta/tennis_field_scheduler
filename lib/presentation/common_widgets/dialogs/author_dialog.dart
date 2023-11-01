@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tennis_field_scheduler/presentation/common_widgets/ontap_wrapper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/ui_colors.dart';
 import '../../../core/constants/ui_text_styles.dart';
 import '../../../core/constants/ui_texts.dart';
+import '../../../core/static_data/static_data.dart';
 import '../../../core/tools/stamp.dart';
 
 class AuthorDialog extends StatelessWidget {
@@ -33,10 +37,28 @@ class AuthorDialog extends StatelessWidget {
         style: styleRegular(24, cWhite),
         textAlign: TextAlign.center,
       ),
-      content: Text(
-        "Julio César León Anhuamán\nCaracas - Venezuela",
-        style: styleRegular(16, cWhite),
-        textAlign: TextAlign.center,
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            "Julio César León Anhuamán\nCaracas - Venezuela",
+            style: styleRegular(16, cWhite),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 16),
+          OnTapWrapper(
+            widgetToWrap: SvgPicture.asset(
+              "assets/images/linkedin.svg",
+            ),
+            actionsToDo: () async {
+              final url = Uri.parse(authorLinkedin);
+
+              if (await canLaunchUrl(url)) {
+                await launchUrl(url);
+              }
+            },
+          ),
+        ],
       ),
       actions: [
         Row(
