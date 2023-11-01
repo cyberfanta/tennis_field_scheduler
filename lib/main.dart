@@ -48,13 +48,14 @@ class MyApp extends StatelessWidget {
         AddDatesView.routeName: (context) => const AddDatesView(),
       },
       localizationsDelegates: const [
-        UxTextDelegate(),
+        UiTextDelegate(),
         GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en', 'US'), // English
-        Locale('es', 'ES'), // Spanish
+        Locale('en', 'US'),
+        Locale('es', 'ES'),
       ],
     );
   }

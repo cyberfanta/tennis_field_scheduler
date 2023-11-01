@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tennis_field_scheduler/core/constants/ui_texts.dart';
 
-class UxTextDelegate extends LocalizationsDelegate<UiTexts> {
-  const UxTextDelegate();
+class UiTextDelegate extends LocalizationsDelegate<UiTexts> {
+  const UiTextDelegate();
 
   @override
   bool isSupported(Locale locale) => ["en", "es"].contains(locale.languageCode);
@@ -11,5 +11,5 @@ class UxTextDelegate extends LocalizationsDelegate<UiTexts> {
   Future<UiTexts> load(Locale locale) => UiTexts.load(locale);
 
   @override
-  bool shouldReload(UxTextDelegate old) => false;
+  bool shouldReload(UiTextDelegate old) => false;
 }

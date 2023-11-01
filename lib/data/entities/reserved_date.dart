@@ -1,5 +1,10 @@
 import 'dart:convert';
 
+ReservedDate reservedDateFromJson(String str) =>
+    ReservedDate.fromJson(json.decode(str) as Map<String, dynamic>);
+
+String reservedDateToJson(ReservedDate data) => json.encode(data.toJson());
+
 class ReservedDate {
   final String id;
   final String field;
@@ -20,13 +25,31 @@ class ReservedDate {
         'owner': owner,
       });
 
-  static ReservedDate fromJson(String str) {
-    final data = json.decode(str);
+  factory ReservedDate.fromJson(Map<String, dynamic> json) {
     return ReservedDate(
-      id: data['id'],
-      field: data['field'],
-      date: data['date'],
-      owner: data['owner'],
+      id: json['id'],
+      field: json['field'],
+      date: json['date'],
+      owner: json['owner'],
     );
+  }
+
+  factory ReservedDate.empty() {
+    return ReservedDate(
+      id: "0",
+      field: "A",
+      date: "2023-10-31",
+      owner: "Julio Leon",
+    );
+  }
+
+  @override
+  String toString() {
+    return "{"
+        "\"id\":\"$id\","
+        "\"field\":\"$field\","
+        "\"date\":\"$date\","
+        "\"owner\":\"$owner\""
+        "}";
   }
 }

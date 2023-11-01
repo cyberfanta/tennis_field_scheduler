@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/static_data/shared_preferences_constants.dart';
@@ -14,7 +16,7 @@ class Repository {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final List<String> data =
         prefs.getStringList(sharedPreferenceReservations) ?? [];
-    return data.map((str) => ReservedDate.fromJson(str)).toList();
+    return data.map((str) => ReservedDate.fromJson(json.decode(str) as Map<String, dynamic>)).toList();
   }
 
   Future<void> saveReservedDate(List<ReservedDate> reservedDatesList) async {
